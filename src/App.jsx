@@ -20,6 +20,7 @@ import ScrollTopButton from './components/ScrollTopButton';
 import TopProgressBar from './components/TopProgressBar';
 import { useEffect } from 'react';
 import NotFound from './pages/NotFound';
+import TryOuts from './pages/TryOuts';
 
 const App = () => {
 
@@ -84,6 +85,7 @@ const App = () => {
           <Route path="/careers/:slug" element={<JobDetail />} />
           <Route path="/terms-of-service" element={<Terms />} />
           <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/try-outs" element={<TryOuts />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/404" element={<NotFound />} />
         </Routes>

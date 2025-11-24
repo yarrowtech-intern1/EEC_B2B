@@ -1,6 +1,8 @@
 // FeaturesPage.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
+
 
 // ===== Image path (put Features.jpg into /public as features-hero.jpg) =====
 const HERO_IMAGE = "/Features.jpg";
@@ -117,6 +119,15 @@ const DEFAULT_FEATURES = [
 export default function FeaturesPage({ items = DEFAULT_FEATURES }) {
   return (
     <div className="min-h-screen w-full">
+      <Helmet>
+        <title>Features Page – Electronic Educare | Explore our features</title>
+        <meta name="description" content="Educare provides academic resources for educators worldwide." />
+        <meta property="og:title" content="Features Page – Electronic Educare | Explore our features" />
+        <meta property="og:description" content="Educare provides academic resources for educators worldwide." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/logo_new.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       {/* ===== PARALLAX HERO ===== */}
       <section className="relative h-[54vh] md:h-[66vh]">
         <div
@@ -143,59 +154,81 @@ export default function FeaturesPage({ items = DEFAULT_FEATURES }) {
 
       {/* ===== FEATURE “CAPSULES” (non-card design) ===== */}
       <section className="mx-auto max-w-7xl px-6 py-10 md:py-14">
-        <div className="grid gap-8 sm:grid-cols-2">
-          {items.map((f, i) => (
-            <motion.article
-              key={f.title + i}
-              {...fade(0.06 * (i + 1))}
-              className="
-                relative group isolate overflow-hidden rounded-2xl
-                bg-white/85 backdrop-blur
-                shadow-[0_8px_26px_rgba(17,24,39,0.10)]
-                ring-1 ring-amber-300/50
-                hover:shadow-[0_14px_36px_rgba(17,24,39,0.16)]
-                transition-all will-change-transform
-                hover:-translate-y-0.5
-              "
-            >
-              {/* Amber ribbon at left (EEC theme) */}
-              <div className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-amber-400 via-amber-500 to-amber-600" />
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+          {items.map((f, i) => {
+            const isLastOdd =
+              items.length % 3 === 1 && i === items.length - 1; // last card of incomplete row
 
-              {/* Soft aurora glow on hover */}
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
+            return (
+              <div
+                key={i}
+                className={isLastOdd ? "flex justify-center lg:col-span-3" : ""}
+              >
+                {/* your card */}
+                <motion.article
+                  {...fade(0.06 * (i + 1))}
+                  className="
+  relative group isolate overflow-hidden rounded-3xl
+  bg-white/70 backdrop-blur-xl
+  shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+  ring-1 ring-amber-300/40
+  hover:ring-amber-400/80
+  hover:shadow-[0_18px_44px_rgba(0,0,0,0.12)]
+  transition-all duration-300
+  hover:-translate-y-1 hover:scale-[1.02]
+"
+
+                >
+                  {/* Amber ribbon at left (EEC theme) */}
+                  <div className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-amber-400 via-amber-500 to-amber-600" />
+
+                  {/* Soft aurora glow on hover */}
+                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
                               [background:radial-gradient(380px_120px_at_20%_0%,rgba(251,191,36,0.18),transparent_60%)]" />
 
-              {/* Floating “coin” icon */}
-              <div
-                className={`
-                  absolute -top-2 -left-2 h-14 w-14 rounded-2xl
-                  bg-amber-500 text-white shadow-xl shadow-amber-500/30
-                  grid place-items-center ring-2 ring-amber-200
-                `}
-              >
-                <div className="w-7 h-7 opacity-95 ml-2">{f.icon}</div>
+                  {/* Floating “coin” icon */}
+                  <div
+                    className="
+    absolute -top-3 -left-3 h-16 w-16 rounded-3xl
+    bg-gradient-to-br from-amber-400 to-amber-600
+    text-white shadow-xl shadow-amber-500/40
+    grid place-items-center ring-2 ring-amber-200/60
+    group-hover:scale-105 transition-all duration-300
+  "
+                  >
+
+                    <div className="w-7 h-7 opacity-95 ml-2">{f.icon}</div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10 p-7 pt-12 md:pt-8 lg:pt-8 pl-10 sm:pl-12 md:pl-20 lg:pl-20">
+                    <h3 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 
+  group-hover:text-amber-700 transition-colors duration-300">
+                      {f.title}
+                    </h3>
+                    <p className="mt-3 text-sm md:text-[15px] leading-relaxed text-slate-700 
+  group-hover:text-slate-900 transition-colors duration-300">
+                      {f.desc}
+                    </p>
+
+                    {/* Bottom shadow puck => “floating capsule” */}
+                    {/* <div className="mt-6 h-6 rounded-2xl bg-gradient-to-b from-transparent to-black/5 blur-[6px] opacity-70" /> */}
+                  </div>
+
+                  {/* Decorative amber dots (unique look, not a card) */}
+                  <div className="absolute right-3 top-3 h-2 w-2 rounded-full bg-amber-400/80" />
+                  <div className="absolute right-6 top-7 h-1.5 w-1.5 rounded-full bg-amber-500/80" />
+                  <div className="absolute right-9 top-11 h-1.5 w-1.5 rounded-full bg-amber-600/70" />
+                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 
+  transition duration-500 
+  bg-[radial-gradient(circle_at_50%_120%,rgba(251,191,36,0.08),transparent_60%)]" />
+
+                </motion.article>
               </div>
-
-              {/* Content */}
-              <div className="relative z-10 p-7 pl-10 sm:pl-12">
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900">
-                  {f.title}
-                </h3>
-                <p className="mt-3 text-sm md:text-[15px] leading-relaxed text-slate-700">
-                  {f.desc}
-                </p>
-
-                {/* Bottom shadow puck => “floating capsule” */}
-                {/* <div className="mt-6 h-6 rounded-2xl bg-gradient-to-b from-transparent to-black/5 blur-[6px] opacity-70" /> */}
-              </div>
-
-              {/* Decorative amber dots (unique look, not a card) */}
-              <div className="absolute right-3 top-3 h-2 w-2 rounded-full bg-amber-400/80" />
-              <div className="absolute right-6 top-7 h-1.5 w-1.5 rounded-full bg-amber-500/80" />
-              <div className="absolute right-9 top-11 h-1.5 w-1.5 rounded-full bg-amber-600/70" />
-            </motion.article>
-          ))}
+            );
+          })}
         </div>
+
       </section>
 
       {/* ===== CTA ===== */}

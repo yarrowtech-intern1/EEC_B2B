@@ -1,6 +1,7 @@
 // Gallery.jsx
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 // ===== Hero image (place /gallery.jpg in /public) =====
 const HERO_IMAGE = "/gallery.jpg";
@@ -55,6 +56,20 @@ function Lightbox({ open, onClose, src }) {
 
   return (
     <AnimatePresence>
+      <Helmet>
+        <title>Gallery – Electronic Educare | Explore Our Gallery</title>
+        <meta
+          name="description"
+          content="Explore the gallery of Electronic Educare (EEC) – showcasing our vibrant school community, events, and learning moments captured through images."
+        />
+        <meta name="keywords" content="Gallery, Electronic Educare, School LMS, School ERP, AI Learning, School Events" />
+        <meta property="og:title" content="Gallery – Electronic Educare | Explore Our Gallery" />
+        <meta
+          property="og:description"
+          content="Discover the story, mission, and vision behind EEC, the AI-powered school ecosystem designed to empower schools, teachers, parents, and students."
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {open && (
         <motion.div
           className="fixed inset-0 z-50"

@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer className="relative mt-24 text-slate-800 mb-8">
       {/* Warm rounded band (no blue) */}
-      <div className="mx-3 md:mx-6 lg:mx-10 rounded-3xl bg-amber-50/80">
+      <div className="mx-3 md:mx-6 lg:mx-10 rounded-3xl bg-amber-100/80">
         {/* Raised contact+map card */}
         <div className="relative -top-10 mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden shadow-xl">
@@ -60,22 +60,24 @@ export default function Footer() {
                 <div className="pt-2">
                   <p className="text-sm font-semibold mb-2">Follow Us:</p>
                   <div className="flex items-center gap-3 text-base">
-                    <a
+                    {/* <a
                       href="#"
                       aria-label="Facebook"
                       className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
                     >
                       <FaFacebookF />
-                    </a>
+                    </a> */}
                     <a
-                      href="#"
+                      target="_blank"
+                      href="https://www.instagram.com/its_eec_?igsh=djllcXR4dW16NWty"
                       aria-label="Instagram"
                       className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
                     >
                       <FaInstagram />
                     </a>
                     <a
-                      href="#"
+                      target="_blank"
+                      href="https://www.linkedin.com/in/electroniceducare-eec-413ba6328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                       aria-label="LinkedIn"
                       className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
                     >
@@ -126,7 +128,7 @@ export default function Footer() {
               <h4 className="text-slate-900 font-semibold">Contact Us</h4>
               <div className="mt-2 h-0.5 w-10 bg-amber-300 rounded" />
               <ul className="mt-3 text-[13px] leading-6 text-slate-700 space-y-1">
-                <li><Link to="/contact" className="hover:text-amber-700">Contact Us</Link></li>
+                <li><Link to="mailto:eec@electroniceducare.com" className="hover:text-amber-700">Contact Us</Link></li>
                 <li><Link to="/careers" className="hover:text-amber-700">Career</Link></li>
                 {/* <li><Link to="/terms-of-services" className="hover:text-amber-700">Terms & Conditions</Link></li>
                 <li><Link to="/privacy-policy" className="hover:text-amber-700">Privacy and </Link></li> */}
@@ -136,14 +138,16 @@ export default function Footer() {
             {/* Right block: logo + subline */}
             <div className="md:col-span-3 flex flex-col items-start md:items-end justify-between">
               <div className="flex flex-col items-start md:items-end">
-                <img
-                  src="/logo_new.png"
-                  alt="EEC"
-                  className="h-14 md:h-16 object-contain"
-                />
-                <p className="text-[12px] text-slate-600 mt-1">
-                  Accelerating School’s Growth
-                </p>
+                <Link to="/">
+                  <img
+                    src="/logo_new.png"
+                    alt="EEC"
+                    className="h-14 md:h-16 object-contain"
+                  />
+                  <p className="text-[12px] text-slate-600 mt-1">
+                    Accelerating School’s Growth
+                  </p>
+                </Link>
               </div>
             </div>
           </div>

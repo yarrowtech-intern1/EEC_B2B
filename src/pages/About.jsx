@@ -1,6 +1,6 @@
-// About.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const HERO_IMAGE = "/about-hero.jpg";
 
@@ -13,6 +13,23 @@ const fade = (d = 0) => ({
 export default function About() {
   return (
     <div className="min-h-screen w-full">
+
+      {/* ===== SEO USING REACT HELMET ===== */}
+      <Helmet>
+        <title>About EEC – Electronic Educare | Our Story, Vision & Mission</title>
+        <meta
+          name="description"
+          content="Learn about Electronic Educare (EEC) – our story, our mission to transform education, and our vision to empower schools with AI-powered, holistic learning technology."
+        />
+        <meta name="keywords" content="About EEC, Electronic Educare, School LMS, School ERP, AI Learning, Vision Mission" />
+        <meta property="og:title" content="About EEC – Electronic Educare" />
+        <meta
+          property="og:description"
+          content="Discover the story, mission, and vision behind EEC, the AI-powered school ecosystem designed to empower schools, teachers, parents, and students."
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       {/* ===== HERO ===== */}
       <section className="relative h-[56vh] md:h-[68vh]">
         <div
@@ -33,88 +50,131 @@ export default function About() {
               About EEC
             </h1>
           </motion.div>
-
         </div>
-        <div className="pointer-events-none absolute -bottom-1 left-0 right-0 h-10 bg-gradient-to-b from-transparent to-white dark:to-white" />
+
+        <div className="pointer-events-none absolute -bottom-1 left-0 right-0 h-10 bg-gradient-to-b from-transparent to-white" />
       </section>
 
       {/* ===== MAIN CONTENT ===== */}
       <main className="mx-auto max-w-7xl px-6 pb-16 md:pb-24 pt-10 md:pt-14">
         <motion.section {...fade(0.1)} className="space-y-10">
 
-          {/* Our Story */}
-          <div className="">
-            {/* <h2 className="text-2xl font-bold">Our Story</h2> */}
-            <p className="mt-3 text-slate-700 leading-relaxed">
-              <span className="font-extrabold text-amber-500">Electronic Educare (EEC), {" "}</span>
+          {/* ⭐ OUR STORY (Upgraded UI) */}
+          <div
+            className="
+              group relative overflow-hidden rounded-3xl
+              border border-amber-200/70 bg-white/90 backdrop-blur-xl
+              p-8 shadow-[0_8px_26px_rgba(0,0,0,0.06)]
+              transition-all duration-300
+              hover:shadow-[0_14px_36px_rgba(0,0,0,0.10)]
+              hover:-translate-y-1
+            "
+          >
+            {/* Glow */}
+            <div
+              className="
+                pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100
+                transition duration-500
+                bg-[radial-gradient(circle_at_60%_-10%,rgba(251,191,36,0.22),transparent_60%)]
+              "
+            />
+
+            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
+              Our Story
+            </h2>
+
+            <p className="mt-4 text-slate-700 leading-relaxed">
+              <span className="font-extrabold text-amber-500">Electronic Educare (EEC),{" "} </span>
               we believe education goes beyond textbooks and exams. Schools today need a partner that not only supports academic excellence but also nurtures emotional well-being and builds stronger connections between students, teachers, and parents.
             </p>
-            <p className="mt-3 text-slate-700 leading-relaxed">
+            <p className="mt-4 text-slate-700 leading-relaxed">
               EEC is more than an LMS — it’s a complete AI-powered school ecosystem. From classrooms to staff rooms, from parents to principals, EEC unites every stakeholder on one secure, paperless, and intelligent platform.
             </p>
-            <p className="mt-3 text-slate-700 leading-relaxed">
+            <p className="mt-4 text-slate-700 leading-relaxed">
               Guided by our unique 4R Philosophy — Reflect, Revise, Retrieve, Repeat — EEC ensures learning is continuous, adaptive, and meaningful. With features like personalized AI learning, smart administration, advanced LMS, and well-being monitoring, we help schools create confident learners, empowered teachers, and satisfied parents.
             </p>
           </div>
 
-          {/* Our Journey */}
-          {/* <div className="rounded-2xl border border-amber-200/70 bg-white/90 p-6 shadow-sm backdrop-blur">
-            <h2 className="text-2xl font-bold">Our Journey</h2>
-            <p className="mt-3 text-slate-700 leading-relaxed">
-              Over the years, EEC has continuously evolved:
-            </p>
-            <ul className="mt-3 list-disc pl-6 space-y-2 text-slate-700">
-              <li><strong>2000s:</strong> Solved challenges like report card preparation, fee leakage,
-                admissions, salary/PF management, and library book tracking with one of the first
-                school ERP systems in India.</li>
-              <li><strong>2010s:</strong> Expanded into cloud-based platforms, enabling schools to manage
-                operations anytime, anywhere with real-time insights.</li>
-              <li><strong>2020:</strong> With the launch of NEP 2020, our research team pivoted to
-                competency-based assessments and new teaching-learning models aligned with
-                21st-century skills.</li>
-              <li><strong>2022:</strong> Introduced Experiential Learning solutions, launched at the
-                All India Experiential Learning Summit in New Delhi, witnessed by 600+ principals,
-                educationists, and leaders.</li>
-              <li><strong>Today:</strong> Serving hundreds of schools across India, delivering
-                AI-powered insights, safe and secure systems, and a complete ecosystem
-                where innovation meets education.</li>
-            </ul>
-          </div> */}
+          {/* ⭐ OUR VISION (Upgraded UI) */}
+          <div
+            className="
+              group relative overflow-hidden rounded-3xl
+              border border-amber-200/70 bg-white/90 backdrop-blur-xl
+              p-8 shadow-[0_8px_26px_rgba(0,0,0,0.06)]
+              transition-all duration-300
+              hover:shadow-[0_14px_36px_rgba(0,0,0,0.12)]
+              hover:-translate-y-1
+            "
+          >
+            {/* Glow */}
+            <div
+              className="
+                pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100
+                transition duration-500
+                bg-[radial-gradient(circle_at_80%_0%,rgba(251,191,36,0.28),transparent_60%)]
+              "
+            />
 
-          {/* Vision */}
-          <div className="rounded-2xl border border-amber-200/70 bg-white/90 p-6 shadow-sm backdrop-blur">
-            <h2 className="text-2xl font-bold">Our Vision</h2>
-            <p className="mt-3 text-slate-700 leading-relaxed">
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+              Our Vision
+            </h2>
+
+            <p className="mt-4 text-slate-700 leading-relaxed">
               At EEC, we envision a future where education transcends boundaries — a world where every learner, every teacher, and every institution is empowered with technology that makes learning smarter, seamless, and truly transformative. Our vision is to be the catalyst of change in the education ecosystem, uniting schools and students through a platform that fosters knowledge, creativity, well-being, and growth. We aim to shape a generation of learners who are not only academically excellent but also confident, emotionally strong, and future-ready.
             </p>
           </div>
 
-          {/* Mission */}
-          <div className="rounded-2xl border border-amber-200/70 bg-white/90 p-6 shadow-sm backdrop-blur">
-            <h2 className="text-2xl font-bold">Our Mission</h2>
-            <p>Our mission is to redefine learning and institutional growth by building an intelligent, inclusive, and integrated education ecosystem. We are committed to:</p>
-            <ul className="mt-3 list-disc pl-6 space-y-2 text-slate-700">
-              <li><strong>Empowering Institutions:</strong> Delivering powerful LMS & ERP solutions that simplify operations, enhance teaching, and optimize academic outcomes.</li>
-              <li><strong>Empowering Institutions:</strong> Delivering powerful LMS & ERP solutions that simplify operations, enhance teaching, and optimize academic outcomes.</li>
-              <li><strong>Seamless Collaboration:</strong> Bridging the gap between schools, teachers, parents, and students with transparent communication and real-time tracking.</li>
-              <li><strong>Holistic Education:</strong> Encouraging not just knowledge acquisition but also critical thinking, creativity, mental wellness, and life skills.</li>
-              <li><strong>Scalable & Inclusive Innovation:</strong> Offering solutions that are affordable, flexible, and impactful, ensuring quality education for learners across all backgrounds.</li>
-              <li><strong>Future-Driven Excellence:</strong> Preparing institutions and learners to thrive in a rapidly changing digital-first world, where education is not just taught but truly experienced.</li>
+          {/* ⭐ OUR MISSION (Upgraded UI) */}
+          <div
+            className="
+              group relative overflow-hidden rounded-3xl
+              border border-amber-200/70 bg-white/90 backdrop-blur-xl
+              p-8 shadow-[0_8px_26px_rgba(0,0,0,0.06)]
+              transition-all duration-300
+              hover:shadow-[0_14px_36px_rgba(0,0,0,0.12)]
+              hover:-translate-y-1
+            "
+          >
+            {/* Glow */}
+            <div
+              className="
+                pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100
+                transition duration-500
+                bg-[radial-gradient(circle_at_10%_0%,rgba(251,191,36,0.20),transparent_60%)]
+              "
+            />
+
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+              Our Mission
+            </h2>
+
+            <p className="mt-4 text-slate-700 leading-relaxed">
+              Our mission is to redefine learning and institutional growth by building an intelligent, inclusive, and integrated education ecosystem. We are committed to:
+            </p>
+
+            <ul className="mt-5 space-y-3 pl-6 text-slate-700">
+              {[
+                "Empowering Institutions: Delivering powerful LMS & ERP solutions that simplify operations, enhance teaching, and optimize academic outcomes.",
+                "Empowering Institutions: Delivering powerful LMS & ERP solutions that simplify operations, enhance teaching, and optimize academic outcomes.",
+                "Seamless Collaboration: Bridging the gap between schools, teachers, parents, and students with transparent communication and real-time tracking.",
+                "Holistic Education: Encouraging not just knowledge acquisition but also critical thinking, creativity, mental wellness, and life skills.",
+                "Scalable & Inclusive Innovation: Offering solutions that are affordable, flexible, and impactful, ensuring quality education for learners across all backgrounds.",
+                "Future-Driven Excellence: Preparing institutions and learners to thrive in a rapidly changing digital-first world, where education is not just taught but truly experienced.",
+              ].map((item, idx) => (
+                <li
+                  key={idx}
+                  className="
+                    relative pl-5
+                    before:absolute before:left-0 before:top-2 before:h-2 before:w-2
+                    before:rounded-full before:bg-amber-500
+                  "
+                >
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Core Values */}
-          {/* <div className="rounded-2xl border border-amber-200/70 bg-white/90 p-6 shadow-sm backdrop-blur">
-            <h2 className="text-2xl font-bold">Our Core Values</h2>
-            <ul className="mt-3 list-disc pl-6 space-y-2 text-slate-700">
-              <li>Demanding Excellence</li>
-              <li>Challenging the Status Quo</li>
-              <li>Speaking from Meaningful Experience</li>
-              <li>Continuous Learning</li>
-              <li>Responsive and Result-Oriented</li>
-              <li>Building Relationships for Life</li>
-            </ul>
-          </div> */}
         </motion.section>
       </main>
     </div>

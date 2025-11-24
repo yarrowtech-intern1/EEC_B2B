@@ -1,6 +1,7 @@
 // Modules.jsx
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 /* ===== Parallax hero image (place /Modules.jpg in /public) ===== */
 const HERO_IMAGE = "/Modules.jpg";
@@ -349,6 +350,20 @@ function Modal({ open, onClose, title, items, icon, accent = "" }) {
 
   return (
     <AnimatePresence>
+      <Helmet>
+        <title>Modules Page – Electronic Educare | Explore our modules</title>
+        <meta
+          name="description"
+          content="Learn about Electronic Educare (EEC) – our story, our mission to transform education, and our vision to empower schools with AI-powered, holistic learning technology."
+        />
+        <meta name="keywords" content="About EEC, Electronic Educare, School LMS, School ERP, AI Learning, Vision Mission" />
+        <meta property="og:title" content="Modules Page – Electronic Educare | Explore our modules" />
+        <meta
+          property="og:description"
+          content="Discover the story, mission, and vision behind EEC, the AI-powered school ecosystem designed to empower schools, teachers, parents, and students."
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {open && (
         <motion.div
           className="fixed inset-0 z-50"
@@ -484,7 +499,7 @@ export default function Modules() {
 
       {/* ===== CARDS (UNCHANGED DESIGN) ===== */}
       <section className="mx-auto max-w-7xl px-6 py-8 md:py-12">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {visibleModules.map((m, i) => (
             <motion.button
               key={m.key}
@@ -504,7 +519,6 @@ export default function Modules() {
                 className="pointer-events-none absolute -inset-x-2 -inset-y-1 rounded-[32px] opacity-0 blur-xl transition group-hover:opacity-100"
                 style={{ background: "linear-gradient(90deg, rgba(251,191,36,.25), rgba(99,102,241,.25))" }}
               />
-
               {/* Ribbon inner with angled stripe */}
               <div className="relative rounded-[26px] bg-white/90">
                 <div className="pointer-events-none absolute -left-20 top-0 h-full w-40 -skew-x-12 bg-gradient-to-b from-amber-600/40 to-indigo-200/40" />

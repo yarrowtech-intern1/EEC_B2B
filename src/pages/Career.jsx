@@ -7,6 +7,7 @@ import {
   FaBolt, FaUsers, FaLaptopCode, FaClock, FaMoneyBillWave, FaShieldAlt,
   FaGraduationCap, FaChartLine, FaGlobeAsia
 } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 /* ===== Parallax hero image ===== */
 const HERO_IMAGE = "/career.jpg";
@@ -25,6 +26,20 @@ const initials = (t = "") =>
 export default function Career() {
   return (
     <div className="min-h-screen w-full">
+      <Helmet>
+        <title>Careers Page – Electronic Educare | Explore our Career</title>
+        <meta
+          name="description"
+          content="Learn about Electronic Educare (EEC) – our story, our mission to transform education, and our vision to empower schools with AI-powered, holistic learning technology."
+        />
+        <meta name="keywords" content="About EEC, Electronic Educare, School LMS, School ERP, AI Learning, Vision Mission" />
+        <meta property="og:title" content="Careers Page – Electronic Educare | Explore our Career" />
+        <meta
+          property="og:description"
+          content="Discover the story, mission, and vision behind EEC, the AI-powered school ecosystem designed to empower schools, teachers, parents, and students."
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* ===== PARALLAX HERO (right-aligned like FeaturesPage) ===== */}
       <section className="relative h-[54vh] md:h-[66vh]">
         <div
