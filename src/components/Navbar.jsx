@@ -71,6 +71,15 @@ export default function Navbar() {
               Get a Demo
             </a>
 
+            <a
+              target="_blank"
+              href="https://eec-tryout.vercel.app/"
+              // className="hidden md:inline-block rounded bg-gradient-to-tr from-yellow-200 via-yellow-400 to-yellow-600 text-slate-900 px-4 py-2 font-semibold shadow hover:bg-amber-500 transition-all"
+              className="hidden md:inline-block rounded hover:bg-amber-400 border border-amber-400 text-slate-900 px-4 py-2 font-semibold shadow hover:bg-amber-300 transition-all"
+            >
+              Explore
+            </a>
+
             <button
               type="button"
               onClick={() => setOpen(true)}
